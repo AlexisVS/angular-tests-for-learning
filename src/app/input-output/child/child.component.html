@@ -1,0 +1,10 @@
+<div style="border: 1px solid">
+  <input #input>
+  <button (click)="onUpdateMessage(input.value)">onUpdateMessage(input.value)</button>
+  <hr>
+  <h1><strong>Counter: </strong>{{ counter }}</h1>
+  <div style="display: inline">
+    <button (click)="onCounterIncrement()"><h1>+</h1></button>
+    <button (click)="onCounterDecrement()"><h1>-</h1></button>
+  </div>
+</div>

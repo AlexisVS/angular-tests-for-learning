@@ -1,0 +1,13 @@
+<h1>{{ messageFromParent }}</h1>
+<hr>
+<h1><strong>Counter: </strong>{{ counter }}</h1>
+<br>
+<br>
+
+<app-input-output-child
+  (messageChange)="onMessageChange($event)"
+  [message]="messageFromParent"
+
+  [(counter)]="counter"
+>
+</app-input-output-child>
