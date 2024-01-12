@@ -24,5 +24,4 @@ export class ViewChildComponent implements AfterViewInit {
     this.changeDetectorRef.detectChanges();
   }
 
-
 }

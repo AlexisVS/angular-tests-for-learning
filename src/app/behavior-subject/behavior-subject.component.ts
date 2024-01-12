@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {BehaviorSubjectService} from "./behavior-subject.service";
 
 @Component({
   selector: 'app-behavior-subject',
@@ -7,11 +8,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BehaviorSubjectComponent implements OnInit {
 
-  constructor() { }
+  // Out of the exercise scope but this is how you can use ViewChild too for handling HTML elements
+  @ViewChild('input') input?: ElementRef<HTMLInputElement>
 
-  messageFromParent = 'Message from parent';
+  public messages?: string[];
+
+
+  constructor(
+    private behaviorSubjectService: BehaviorSubjectService
+  ) {
+  }
+
+  onAddMessage(message: string): void {
+    this.behaviorSubjectService.addMessage(message);
+  }
+
+  onClearMessages(): void {
+    this.behaviorSubjectService.clearMessages();
+  }
+
 
   ngOnInit(): void {
+    this.behaviorSubjectService.messages$.subscribe(messages => this.messages = messages);
   }
 
 }

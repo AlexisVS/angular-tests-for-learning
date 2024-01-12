@@ -9,6 +9,8 @@ import {ViewChildComponent} from './view-child/view-child.component';
 import {ChildComponent as ViewChildChildComponent} from './view-child/child/child.component';
 import {BehaviorSubjectComponent} from './behavior-subject/behavior-subject.component';
 import {ChildComponent as BehaviorSubjectChildComponent} from './behavior-subject/child/child.component';
+import {BehaviorSubjectService} from "./behavior-subject/behavior-subject.service";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -18,13 +20,17 @@ import {ChildComponent as BehaviorSubjectChildComponent} from './behavior-subjec
     ViewChildComponent,
     ViewChildChildComponent,
     BehaviorSubjectComponent,
-    BehaviorSubjectChildComponent
+    BehaviorSubjectChildComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    BehaviorSubjectService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

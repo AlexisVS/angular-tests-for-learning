@@ -1,1 +1,8 @@
-<p>child works!</p>
+<div>
+  <h1 *ngFor="let message of messages">{{ message }}</h1>
+  <input type="text" #input="">
+  <button (click)="onAddMessage(input.value)">Add</button>
+  <button (click)="onClearMessages()">Clear</button>
+  <hr>
+
+</div>
